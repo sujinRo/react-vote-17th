@@ -1,4 +1,4 @@
-import mongoose, {Schema, Document, Model} from 'mongoose';
+import mongoose, {Schema, Document, Model, models} from 'mongoose';
 import bcrypt from 'bcrypt';
 
 interface IUser {
@@ -16,7 +16,7 @@ interface IUserModel extends Model<IUserDocument> {
     findByUsername: (username: string) => Promise<IUserDocument>;
 }
 
-const UserSchema: Schema<IUserDocument>= new Schema({
+const UserSchema: Schema<IUserDocument> = new Schema({
     username: {type: String, required: true},
     hashedPassword: {type: String, required: true},
 });
@@ -43,5 +43,6 @@ UserSchema.statics.findByUsername = function(username) {
     return this.findOne({username});
 };
 
-const User = mongoose.model<IUserDocument, IUserModel>('User', UserSchema);
+const User = models.User ? (models.User as IUserModel) : mongoose.model<IUserDocument, IUserModel>('User', UserSchema);
+
 export default User;

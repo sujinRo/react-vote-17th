@@ -1,5 +1,5 @@
 import Joi from 'joi';
-import User from '../../models/user';
+import User from '../../../models/userDetail';
 
 export const register = async (ctx:any) => {
     //회원가입
@@ -41,16 +41,4 @@ export const register = async (ctx:any) => {
     catch (e){
         ctx.throw(500,e);
     }
-};
-
-export const login = async (ctx:any) => {
-    //로그인
-};
-
-export const check = async (ctx:any) => {
-    //로그인 상태 확인
-};
-
-export const logout = async (ctx:any) => {
-    //로그아웃
 };
