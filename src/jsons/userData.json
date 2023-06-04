@@ -1,0 +1,24 @@
+{
+    "users": [
+        {
+            "name": "노수진",
+            "id": "shtnwls1111",
+            "password": "shtnwls2609!"
+        },
+        {
+            "name": "신유진",
+            "id": "tlsdbwls1111",
+            "password": "tlsdbwls2609!"
+        },
+        {
+            "name": "세오스",
+            "id": "ceos1234",
+            "password": "ceos2609!"
+        },
+        {
+            "name": "프론트",
+            "id": "front1234",
+            "password": "front2609!"
+        }
+    ]
+}
